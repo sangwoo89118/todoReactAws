@@ -1,0 +1,14 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "todoreactaws-20190409200013-authRole",
+            "UnauthRoleArn": "arn:aws:iam::955462275360:role/todoreactaws-20190409200013-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::955462275360:role/todoreactaws-20190409200013-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "todoreactaws-20190409200013-deployment",
+            "UnauthRoleName": "todoreactaws-20190409200013-unauthRole",
+            "StackName": "todoreactaws-20190409200013",
+            "StackId": "arn:aws:cloudformation:us-east-2:955462275360:stack/todoreactaws-20190409200013/c33226c0-5b3c-11e9-81ae-0aedd1bf2484"
+        }
+    }
+}
