@@ -9,6 +9,11 @@
             "UnauthRoleName": "todoreactaws-20190409200013-unauthRole",
             "StackName": "todoreactaws-20190409200013",
             "StackId": "arn:aws:cloudformation:us-east-2:955462275360:stack/todoreactaws-20190409200013/c33226c0-5b3c-11e9-81ae-0aedd1bf2484"
+        },
+        "categories": {
+            "auth": {
+                "cognito454d9d2f": {}
+            }
         }
     }
 }
