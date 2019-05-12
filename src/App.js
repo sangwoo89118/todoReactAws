@@ -1,18 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Amplify from 'aws-amplify';
 import awsmobile from './aws-exports';
 import { withAuthenticator } from 'aws-amplify-react';
 
+import SideNav from './components/layouts/nav/SideNav';
+import Main from './components/layouts/main/Main';
+
+import Store from './context/Store';
+
 Amplify.configure(awsmobile);
 
-class App extends Component {
-  render() {
-    return (
+const App = () => {
+  return (
+    <Store>
       <div className="App">
-        <h1>Todo List</h1>
+        <div className="container">
+          <SideNav />
+          <Main />
+        </div>
       </div>
-    );
-  }
+    </Store>
+  )
 }
 
-export default withAuthenticator(App, true);
+export default withAuthenticator(App, false);

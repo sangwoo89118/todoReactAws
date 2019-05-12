@@ -1,14 +1,250 @@
+@import url(https://fonts.googleapis.com/css?family=Handlee);
+
 body {
   margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background:#fff;  
+  font-family: 'Handlee', cursive;
+  font-size: 25px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.container {
+  display:flex;
+  margin:3px;
+  width: 98vw;
+  height: 96vh;
+  background:#fff;
+  border: solid black;
+  border-width: 4px 2px 3px 4px;
+  border-radius: 1% 1% 1% 1%/1% 1% 1% 1%;
+}
+
+.disableClick {
+  pointer-events: none;
+}
+
+/* Top Nav Bar */
+.topNavBar {    
+  background:#fff;
+  border-bottom: 4px solid black;
+  flex-shrink: 0;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+
+.menuIcon {
+  font-size: 40px !important;
+  margin-left: 20px;
+}
+
+.currentTitle {
+  margin-left: 40px;
+}
+
+.currentTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* Modal */
+.modalContainer {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 35vw;
+  transform: translate(-50%, -50%);
+  padding: 12px;
+  background:#fff;
+  border: solid black;
+  border-width: 4px 2px 3px 4px;
+  border-radius: 8% 1% 5% 9%/1% 4% 3% 1%;  
+  transition: margin 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+}
+
+.mainContainerWithModal {
+  filter: blur(2px) grayscale(90%);
+  transform: scale(0.98);
+}
+
+.mainContainer, .modalContainer {
+  transition: all 0.6s ease; /* prefix me */
+}
+
+/* Forms */
+.formContainer {
+  width: 100%;
+}
+
+.textField {
+  width: 100%;
+}
+
+.textField > :not(marquee){
+  font-family: 'Handlee', cursive;
+  font-size: 1.2rem;
+}
+
+.textArea {
+  background:#fff !important;
+  border: solid black !important;
+  border-width: 4px 2px 3px 4px !important;
+  border-radius: 8% 1% 5% 9%/1% 4% 3% 1% !important;    
+}
+
+.textArea > input, .textArea > span { /* override react-multi-email css */
+  font-family: 'Handlee', cursive;
+  font-size: 1rem;
+}
+
+/* MAIN */
+.mainContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.mainContainerWithSideNavBarMobile {
+    filter: blur(2px) grayscale(90%);
+    transform: scale(0.98);
+    pointer-events: none;
+}
+
+.insideMain {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  margin-left: 10px; /* to hide scroll bar */
+}
+
+.insideInsideMain {
+  display: flex;
+  width:100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.projectContainer {
+  margin: 20px;
+  width: 150px;
+  height: 150px;
+  background:#fff;
+  border: solid black;
+  border-width: 4px 2px 3px 4px;
+  border-radius: 8% 1% 5% 9%/1% 4% 3% 1%;
+  display: flex;           /* establish flex container */
+  flex-direction: column;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  word-break: break-word;
+  cursor: pointer;
+}
+
+.projectNameSpan {
+  margin-left: 10px;
+}
+
+/* Left nav bar */
+.sideNavContainer {
+  height: 100%;
+  min-width: 240px;
+  background:#fff;
+  border-right: 3px solid black;
+  transition: transform 455ms cubic-bezier(0, 0, 0.2, 1) 0ms;  
+  z-index: 2;
+}
+
+.sideNavContainerMobile {
+  height: 100%;
+  min-width: 240px;
+  background:#fff;
+  border-right: 3px solid black;
+  transform: translate(0px, 0px);
+  transition: transform 455ms cubic-bezier(0, 0, 0.2, 1) 0ms;  
+  z-index: 2;
+}
+
+.backButton {
+  min-height: 5%;
+  text-align: right;
+  padding-right:10px;
+  display: none;
+  cursor: pointer;
+}
+
+.profileContainer { 
+  min-height: 25%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.listContainer {
+  width: 90%;
+  height: 65%;
+  margin: 0 auto;
+  border: solid black;
+  border-width: 4px 2px 3px 2px;
+  border-radius: 8% 1% 5% 9%/1% 4% 3% 1%;
+  overflow-y: auto;
+}
+
+.logoutContainer {
+  height: 5%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navList {
+  padding-top: 20px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.projectName {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  text-align: left;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  padding-top: 5px;
+}
+
+.teamTodo {
+  padding-left: 15px;
+  padding-top: 5px;
+  font-size: 20px;
+}
+
+.teamMemberTodo {
+  padding-left: 35px;
+  padding-top: 5px;
+  font-size: 20px;
+}
+
+.navListNode {
+  cursor: pointer;
+}
+
+@media only screen 
+  and (max-width: 900px){
+    .sideNavContainer {
+      transform: translateX(-264px);
+    }
+
+    .mainContainer {
+      margin-left: -240px;
+    }
+}
+
+@media only screen
+  and (min-width: 900px){
+    .menuIcon {
+      display: none !important;
+    }
 }
