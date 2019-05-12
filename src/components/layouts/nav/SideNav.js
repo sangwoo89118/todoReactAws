@@ -1,6 +1,7 @@
 import React, {useContext, useEffect}from 'react';
 import NavList from './NavList';
 import SideNavBarContext from '../../../context/SideNavBarContext';
+import {Auth} from 'aws-amplify';
 
 const SideNav = () => {
 
@@ -8,7 +9,13 @@ const SideNav = () => {
 
   useEffect(() => {
     console.log(sideNavBarStatus);
-})
+  })
+
+  const singOut = () => {
+    Auth.signOut()
+      .then(data => console.log(data))
+      .catch(err => console.log(err))
+  }
 
   return (
     <div className={sideNavBarStatus ? "sideNavContainerMobile" : "sideNavContainer"}>
@@ -19,7 +26,7 @@ const SideNav = () => {
           setSideNavBarStatus(false);
         }}
       >
-        Back
+        <span>Back</span>
       </div>
       <div className="profileContainer">Picture</div>
       <div className="listContainer">
@@ -27,7 +34,12 @@ const SideNav = () => {
           <NavList />
         </div>
       </div>
-      <div className="logoutContainer">Log Out</div>
+      <div 
+        className="logoutContainer"
+        onClick={()=>singOut()}
+      >
+        <span>Log Out</span>
+      </div>
     </div>
   )
 }
