@@ -43,7 +43,7 @@ const Main = (props) => {
                     <div className="insideInsideMain"> 
                         <div className="projectContainer" onClick={showModal}>
                         <span style={{fontSize: "50px", textAlign: "left", paddingLeft: "10px"}}>+</span>
-                            <span className="projectNameSpan" style={{marginBottom: "50px"}}>Add Team</span>
+                            <span className="projectNameSpan addTeamSpan">Add Team</span>
                         </div>
                         {project.map((project, id) => (
                             <ProjectContainer project={project} key={id} />
