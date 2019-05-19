@@ -1,6 +1,7 @@
 import React, {useContext, useEffect}from 'react';
 import NavList from './NavList';
 import SideNavBarContext from '../../../context/SideNavBarContext';
+import defaultProfilePicture from '../../../images/default_image.png';
 import {Auth} from 'aws-amplify';
 
 const SideNav = () => {
@@ -28,7 +29,15 @@ const SideNav = () => {
       >
         <span>Back</span>
       </div>
-      <div className="profileContainer">Picture</div>
+      <div className="profileContainer">
+        <div className="profilePictureContainer">
+          <img 
+            src={defaultProfilePicture} alt="profileImage" 
+            className="profilePicture"  
+          />
+          <span style={{textAlign: "center"}}>Edit</span>
+        </div>
+      </div>
       <div className="listContainer">
         <div className="navList"> 
           <NavList />

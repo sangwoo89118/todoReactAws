@@ -57,17 +57,15 @@ const CreateCompanyModal = ({hideModal}) => {
                     />
                 </form>
             </div>
-            <div>
-                <div 
-                    style={{float: "right", paddingTop: "15px"}}
-                    onClick={()=> {
-                        console.log("Team Name: ", teamName);
-                        console.log("Team Description: ", teamDescription);
-                        console.log("Emails: ", emails);
-                    }}
-                >
-                    SUBMIT
-                </div>
+            <div 
+                style={{float: "right", paddingTop: "15px"}}
+                onClick={()=> {
+                    console.log("Team Name: ", teamName);
+                    console.log("Team Description: ", teamDescription);
+                    console.log("Emails: ", emails);
+                }}
+            >
+                SUBMIT
             </div>
         </div>
     )
