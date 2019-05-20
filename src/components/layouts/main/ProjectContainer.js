@@ -1,13 +1,17 @@
 import React from 'react';
+import ProjectTitleContainers from './ProjectTitleContainers';
 
-const ProjectContainer = ({project}) => {
-    return (
-        <div className="projectContainer"
-            onClick={()=>console.log(project.title)}
-        >
-            <span className="projectNameSpan">{project.title}</span>
-        </div>
-    )
-}
-
-export default ProjectContainer;
+const ProjectContianer = ({isModalShown, showModal, project}) => (
+    <div className={`insideMain ${isModalShown ? "disableClick" : ""}`}>
+        <div className="insideInsideMain"> 
+            <div className="projectContainer" onClick={showModal}>
+            <span style={{fontSize: "50px", textAlign: "left", paddingLeft: "10px"}}>+</span>
+                <span className="projectNameSpan addTeamSpan">Add Team</span>
+            </div>
+            {project.map((project, id) => (
+                <ProjectTitleContainers project={project} key={id} />
+            ))}                    
+        </div>                
+    </div>
+)
+export default ProjectContianer;

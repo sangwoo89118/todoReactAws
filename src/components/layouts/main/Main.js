@@ -1,15 +1,21 @@
-import React, {useState, useContext, useEffect} from 'react';
-import {Auth} from 'aws-amplify';
+import React, { useState, useContext, useEffect } from 'react';
+import { Route } from 'react-router';
+import { Auth } from 'aws-amplify';
 import ProjectContext from '../../../context/ProjectContext';
 import SideNavBarContext from '../../../context/SideNavBarContext';
+import RouterContext from '../../../context/RouterContext';
+
 import ProjectContainer from './ProjectContainer';
+import TeamTodoContainer from './TeamTodoContainer';
 import CreateCompanymodal from './CreateCompanyModal';
 import MenuIcon from '@material-ui/icons/Menu';
 
 
-const Main = (props) => {
+const Main = () => {
+
     const [project, setProject] = useContext(ProjectContext);
     const [sideNavBarStatus, setSideNavBarStatus] = useContext(SideNavBarContext);
+    const [customHistory] = useContext(RouterContext);
 
     const [isModalShown, setIsModalShown] = useState(false);
     const [currentUser, setCurrentUser] = useState("");
@@ -38,18 +44,22 @@ const Main = (props) => {
                         }}
                     />
                     <div className="currentTitle">{currentUser}</div>
+                    <div style={{paddingRight: "10px"}} onClick={()=> customHistory.push("/")}>Home</div>
                 </div>
-                <div className={`insideMain ${isModalShown ? "disableClick" : ""}`}>
-                    <div className="insideInsideMain"> 
-                        <div className="projectContainer" onClick={showModal}>
-                        <span style={{fontSize: "50px", textAlign: "left", paddingLeft: "10px"}}>+</span>
-                            <span className="projectNameSpan addTeamSpan">Add Team</span>
-                        </div>
-                        {project.map((project, id) => (
-                            <ProjectContainer project={project} key={id} />
-                        ))}                    
-                    </div>                
-                </div>
+                <Route 
+                    path="/" 
+                    exact 
+                    component={()=> 
+                        <ProjectContainer isModalShown={isModalShown} showModal={showModal} project={project}/>
+                    }
+                />
+                <Route 
+                    path="/teamtodo/:id" 
+                    component={({match})=> 
+                        <TeamTodoContainer match={match}/>
+                    }
+                />
+                
             </div>
             
             {isModalShown ? <CreateCompanymodal hideModal={hideModal} /> : ""}

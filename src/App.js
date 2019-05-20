@@ -11,14 +11,15 @@ import Store from './context/Store';
 Amplify.configure(awsmobile);
 
 const App = () => {
+
   return (
     <Store>
-      <div className="App">
-        <div className="container">
-          <SideNav />
-          <Main />
+        <div className="App">
+          <div className="container">
+            <SideNav />
+            <Main />
+          </div>
         </div>
-      </div>
     </Store>
   )
 }

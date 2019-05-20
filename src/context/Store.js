@@ -1,8 +1,12 @@
 import React, {useState} from 'react';
+import { Router } from 'react-router';
+import { createBrowserHistory } from "history";
 import ProjectContext from './ProjectContext';
 import SideNavBarContext from './SideNavBarContext';
+import RouterContext from './RouterContext';
 
 const Store = ({children}) => {
+    const history = createBrowserHistory();
     const [sideNavBarStatus, setSideNavBarStatus] = useState(false);
     const [project, setProject] = useState(
         [
@@ -120,7 +124,11 @@ const Store = ({children}) => {
     return (
         <ProjectContext.Provider value={[project, setProject]}>
             <SideNavBarContext.Provider value={[sideNavBarStatus, setSideNavBarStatus]}>
-                {children}
+                <Router history={history}>
+                    <RouterContext.Provider value={[history]}>
+                        {children}
+                    </RouterContext.Provider>
+                </Router>
             </SideNavBarContext.Provider>
         </ProjectContext.Provider>
     );

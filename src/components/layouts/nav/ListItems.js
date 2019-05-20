@@ -1,19 +1,24 @@
 import React, {useState, useContext, useEffect} from 'react';
 import SideNavBarContext from '../../../context/SideNavBarContext';
+import RouterContext from '../../../context/RouterContext';
 
 const ListItems = ({project}) => {
     const [toggle, setToggle] = useState(false);
     const [sideNavBarStatus, setSideNavBarStatus] = useContext(SideNavBarContext);
+    const [customHistory] = useContext(RouterContext);
 
     const clickOnTeamTodo = (project) => {
         console.log(project);
+        customHistory.push("/teamtodo/" + project.id);
         setSideNavBarStatus(false);
     }
 
     const clickOnMember = (member) => {
         console.log(member);
         setSideNavBarStatus(false);
-    }
+    }   
+    
+    console.log(customHistory);
 
     return(
         <>
