@@ -30,6 +30,11 @@ const Main = () => {
         })
     });
 
+    const clickOnHome = () => {
+        setCurrentTitle("");
+        customHistory.push("/");
+    }
+
     return (
         <>
             <div 
@@ -38,8 +43,8 @@ const Main = () => {
             >
                 <div className="topNavBar">
                     <MenuIcon className="menuIcon" onClick={() => {setSideNavBarStatus(true)}}/>
-                    <div className="currentTitle">SW TODO {currentTitle}</div>
-                    <div style={{paddingRight: "10px"}} onClick={()=> {customHistory.push("/")}}>Home</div>
+                    <div className="currentTitle">{currentTitle ? currentTitle : "SW TODO"}</div>
+                    <div style={{paddingRight: "10px"}} onClick={()=> clickOnHome()}>Home</div>
                 </div>                
                 <Route 
                     path="/" 

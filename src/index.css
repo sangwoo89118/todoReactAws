@@ -24,7 +24,7 @@ body {
 
 /* Top Nav Bar */
 .topNavBar {    
-  background:#fff;
+  background: gainsboro;
   border-bottom: 4px solid black;
   flex-shrink: 0;
   flex-direction: row;
@@ -40,11 +40,9 @@ body {
 
 .currentTitle {
   margin-left: 40px;
-}
-
-.currentTitle {
   font-size: 1.5rem;
   font-weight: 500;
+  text-align: center;
 }
 
 /* Modal */
@@ -278,6 +276,11 @@ body {
     .profileContainer {
       padding: 0;
     }
+
+    .currentTitle {
+      margin: 0;
+    }
+    
 }
 
 @media only screen
