@@ -10,7 +10,7 @@ const CreateCompanyModal = ({hideModal}) => {
 
     return (
         <div className="modalContainer">
-            <div onClick={hideModal} style={{float: "right"}}>X</div>
+            <div onClick={hideModal} style={{alignSelf: "flex-end"}}>X</div>
             <div className="formContainer">                
                 <form>
                     <TextField
@@ -56,17 +56,18 @@ const CreateCompanyModal = ({hideModal}) => {
                         }}
                     />
                 </form>
+                <div 
+                style={{float: "right"}}
+                    onClick={()=> {
+                        console.log("Team Name: ", teamName);
+                        console.log("Team Description: ", teamDescription);
+                        console.log("Emails: ", emails);
+                    }}
+                >
+                    SUBMIT
+                </div>
             </div>
-            <div 
-                style={{float: "right", paddingTop: "15px"}}
-                onClick={()=> {
-                    console.log("Team Name: ", teamName);
-                    console.log("Team Description: ", teamDescription);
-                    console.log("Emails: ", emails);
-                }}
-            >
-                SUBMIT
-            </div>
+           
         </div>
     )
 }

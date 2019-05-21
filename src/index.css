@@ -47,10 +47,13 @@ body {
 
 /* Modal */
 .modalContainer {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 35vw;
+  width: 50vw;
+  z-index:3;
   transform: translate(-50%, -50%);
   padding: 12px;
   background:#fff;
@@ -67,6 +70,10 @@ body {
 
 .mainContainer, .modalContainer {
   transition: all 0.6s ease; /* prefix me */
+}
+
+.modalContainer > .formContainer > form > div:first-child {
+  margin-top: 0;
 }
 
 /* Forms */
@@ -279,8 +286,23 @@ body {
 
     .currentTitle {
       margin: 0;
+    } 
+}
+
+@media only screen 
+  and (max-height: 450px){
+    .textArea {
+      max-height: 33px;
+    }   
+
+    .modalContainer > .formContainer > form > div {
+      margin: 0;
     }
-    
+
+    .modalContainer > .formContainer > form > p {
+      margin-top: 10px;
+      margin-bottom: 3px;
+    }
 }
 
 @media only screen
