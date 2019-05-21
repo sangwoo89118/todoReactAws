@@ -8,8 +8,9 @@ import RouterContext from '../../../context/RouterContext';
 import CurrentTitleContext from '../../../context/CurrentTitleContext';
 
 import ProjectContainer from './ProjectContainer';
-import TeamTodoContainer from './TeamTodoContainer';
 import CreateCompanymodal from './CreateCompanyModal';
+import TeamTodoContainer from './todo/TeamTodoContainer';
+import IndividualTodoContainer from './todo/IndividualTodoContainer';
 import MenuIcon from '@material-ui/icons/Menu';
 
 
@@ -35,8 +36,6 @@ const Main = () => {
         customHistory.push("/");
     }
 
-    console.log(customHistory);
-
     return (
         <>
             <div 
@@ -51,11 +50,15 @@ const Main = () => {
                 <Route 
                     path="/" 
                     exact 
-                    component={()=> <ProjectContainer isModalShown={isModalShown} showModal={showModal} project={project}/>}
+                    component={() => <ProjectContainer isModalShown={isModalShown} showModal={showModal} project={project}/>}
                 />
                 <Route 
                     path="/teamtodo/:id" 
-                    component={({match})=> <TeamTodoContainer match={match}/>}
+                    component={({ match }) => <TeamTodoContainer match={match}/>}
+                />
+                <Route 
+                    path="/todo/:id"
+                    component={({ match }) => <IndividualTodoContainer match={match}/>}
                 />
             </div>
             
