@@ -35,6 +35,8 @@ const Main = () => {
         customHistory.push("/");
     }
 
+    console.log(customHistory);
+
     return (
         <>
             <div 
@@ -44,7 +46,7 @@ const Main = () => {
                 <div className="topNavBar">
                     <MenuIcon className="menuIcon" onClick={() => {setSideNavBarStatus(true)}}/>
                     <div className="currentTitle">{currentTitle ? currentTitle : "SW TODO"}</div>
-                    <div style={{paddingRight: "10px"}} onClick={()=> clickOnHome()}>Home</div>
+                    {customHistory.location.pathname == "/" ? "" : <div style={{paddingRight: "10px"}} onClick={()=> clickOnHome()}>Home</div>}
                 </div>                
                 <Route 
                     path="/" 
