@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectTitleContainers from './ProjectTitleContainers';
 
-const ProjectContianer = ({isModalShown, showModal, project}) => (
+const ProjectContianer = ({ isModalShown, showModal, project }) => (
     <div className={`insideMain ${isModalShown ? "disableClick" : ""}`}>
         <div className="insideInsideMain"> 
             <div className="projectContainer" onClick={showModal}>

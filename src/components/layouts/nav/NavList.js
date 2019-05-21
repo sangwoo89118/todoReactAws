@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, { useState, useContext } from 'react';
 import ProjectContext from '../../../context/ProjectContext';
 import ListItems from './ListItems';
 

@@ -1,10 +1,9 @@
 import React from 'react';
 
-const TeamTodoContainer = ({match})=> {
-    console.log("MATCH: ", match.params.id);
+const TeamTodoContainer = ({ match })=> {
     return (
         <div>
-            <h1>Hello World ID: {match.params.id}</h1>
+            <h1>Team Todo ID: {match.params.id}</h1>
         </div>
     )
 }

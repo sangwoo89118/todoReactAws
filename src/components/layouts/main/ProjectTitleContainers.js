@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ProjectTitleContainers = ({project}) => {
+const ProjectTitleContainers = ({ project }) => {
     return (
         <div className="projectContainer"
-            onClick={()=>console.log(project.title)}
+            onClick={() => console.log(project.title)}
         >
             <span className="projectNameSpan">{project.title}</span>
         </div>

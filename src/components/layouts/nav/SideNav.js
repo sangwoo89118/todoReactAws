@@ -1,4 +1,4 @@
-import React, {useContext, useEffect}from 'react';
+import React, { useContext, useEffect }from 'react';
 import NavList from './NavList';
 import SideNavBarContext from '../../../context/SideNavBarContext';
 import defaultProfilePicture from '../../../images/default_image.png';
@@ -7,10 +7,6 @@ import {Auth} from 'aws-amplify';
 const SideNav = () => {
 
   const [sideNavBarStatus, setSideNavBarStatus] = useContext(SideNavBarContext);
-
-  useEffect(() => {
-    console.log(sideNavBarStatus);
-  })
 
   const singOut = () => {
     Auth.signOut()
@@ -45,7 +41,7 @@ const SideNav = () => {
       </div>
       <div 
         className="logoutContainer"
-        onClick={()=>singOut()}
+        onClick={() => singOut()}
       >
         <span>Log Out</span>
       </div>

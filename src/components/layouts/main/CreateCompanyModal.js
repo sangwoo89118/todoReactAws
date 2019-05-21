@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { ReactMultiEmail, isEmail } from 'react-multi-email';
 import 'react-multi-email/style.css';
 
 const CreateCompanyModal = ({hideModal}) => {
-    const [teamName, setTeamName] = useState("");
-    const [teamDescription, setTeamDescription] = useState("");
-    const [emails, setEmails] = useState([]);
+    const [ teamName, setTeamName ] = useState("");
+    const [ teamDescription, setTeamDescription ] = useState("");
+    const [ emails, setEmails ] = useState([]);
 
     return (
         <div className="modalContainer">
@@ -44,7 +44,7 @@ const CreateCompanyModal = ({hideModal}) => {
                         validateEmail={email => {
                             return isEmail(email); // return boolean
                             }}
-                        getLabel={(email,index,removeEmail)=>{
+                        getLabel={(email,index,removeEmail) => {
                             return(
                                 <div data-tag key={index} style={{fontSize:"1rem"}}>
                                     {email}
