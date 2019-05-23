@@ -19,14 +19,14 @@ const ListItems = ({ project }) => {
 
     const clickOnTeamTodo = () => {
         setSideNavBarStatus(false);
-        setCurrentTitle("Team Todo / " + project.title);
+        setCurrentTitle(`${project.title} - Team Todo`);
         customHistory.push("/teamtodo/" + project.id);
     }
 
     const clickOnMember = ( member ) => {
         console.log(member)
         setSideNavBarStatus(false);
-        setCurrentTitle("Todo / " + project.title + " / " + member.name);
+        setCurrentTitle(`${project.title} - ${member.name}`);
         customHistory.push("/todo/" + member.id);
     }   
     
