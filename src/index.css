@@ -9,9 +9,9 @@ body {
 
 .container {
   display:flex;
-  margin:3px;
-  width: 98vw;
-  height: 96vh;
+  margin: 3px auto;
+  width: 97vw;
+  height: 97vh;
   background:#fff;
   border: solid black;
   border-width: 4px 2px 3px 4px;
@@ -149,6 +149,53 @@ body {
 .projectNameSpan {
   margin-left: 10px;
 }
+
+.indTodoContainer {
+  width:100%;
+  padding-bottom: 30px;
+}
+
+.nodeContainer {
+  /* border: 1px solid black; */
+  display: flex;
+  font-size: 20px;
+}
+
+.nodeContainer > div > span {
+  /* border: 1px solid red; */
+}
+
+.userNode {
+  padding-left: 5px;
+}
+
+.node_1 {
+  padding-left: 25px;
+}
+
+.node_2 {
+  padding-left: 45px;
+}
+
+.node_3 {
+  padding-left: 65px;
+}
+
+.node_4 {
+  padding-left: 85px;
+}
+
+.nodeBegin {
+  padding-right:5px;
+}
+
+.taskContainer {
+  margin-bottom: 10px;
+  padding-right: 10px;
+}
+
+
+
 
 /* Left nav bar */
 .sideNavContainer {

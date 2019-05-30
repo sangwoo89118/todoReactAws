@@ -27,7 +27,7 @@ const ListItems = ({ project }) => {
         console.log(member)
         setSideNavBarStatus(false);
         setCurrentTitle(`${project.title} - ${member.name}`);
-        customHistory.push("/todo/" + member.id);
+        customHistory.push("/todo/" + project.id + "/" + member.id);
     }   
     
     return(

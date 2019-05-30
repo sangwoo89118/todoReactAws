@@ -57,7 +57,7 @@ const Main = () => {
                     component={({ match }) => <TeamTodoContainer match={match}/>}
                 />
                 <Route 
-                    path="/todo/:id"
+                    path="/todo/:projectId/:memberId"
                     component={({ match }) => <IndividualTodoContainer match={match}/>}
                 />
             </div>
