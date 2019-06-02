@@ -16,7 +16,7 @@ const Store = ({ children }) => {
     const history = createBrowserHistory();
     const [ sideNavBarStatus, setSideNavBarStatus ] = useState(false);
     const [ currentTitle, setCurrentTitle ] = useState("");
-    const [ project, setProject ] = useState(dummyData);
+    const [ project, setProject ] = useState([]);
 
     return (
         <ProjectContext.Provider value={[ project, setProject ]}>
