@@ -9,9 +9,6 @@ import SideNavBarContext from './SideNavBarContext';
 import RouterContext from './RouterContext';
 import CurrentTitleContext from './CurrentTitleContext';
 
-// dummy data
-import dummyData from './dummyData';
-
 const Store = ({ children }) => {
     const history = createBrowserHistory();
     const [ sideNavBarStatus, setSideNavBarStatus ] = useState(false);
