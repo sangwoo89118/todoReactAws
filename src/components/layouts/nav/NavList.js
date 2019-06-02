@@ -1,5 +1,10 @@
+// libraries
 import React, { useState, useContext } from 'react';
+
+// contexts
 import ProjectContext from '../../../context/ProjectContext';
+
+// components
 import ListItems from './ListItems';
 
 const NavList = () => {

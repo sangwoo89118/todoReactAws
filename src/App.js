@@ -1,8 +1,10 @@
+// libraries
 import React from 'react';
 import Amplify from 'aws-amplify';
 import awsmobile from './aws-exports';
 import { withAuthenticator } from 'aws-amplify-react';
 
+// components
 import SideNav from './components/layouts/nav/SideNav';
 import Main from './components/layouts/main/Main';
 

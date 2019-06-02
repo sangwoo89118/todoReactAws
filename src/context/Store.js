@@ -1,10 +1,15 @@
+// library
 import React, {useState} from 'react';
 import { Router } from 'react-router';
 import { createBrowserHistory } from "history";
+
+// context
 import ProjectContext from './ProjectContext';
 import SideNavBarContext from './SideNavBarContext';
 import RouterContext from './RouterContext';
 import CurrentTitleContext from './CurrentTitleContext';
+
+// dummy data
 import dummyData from './dummyData';
 
 const Store = ({ children }) => {

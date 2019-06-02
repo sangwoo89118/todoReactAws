@@ -1,4 +1,7 @@
+// libraries
 import React from 'react';
+
+// components
 import ProjectTitleContainers from './ProjectTitleContainers';
 
 const ProjectContianer = ({ isModalShown, showModal, project }) => (

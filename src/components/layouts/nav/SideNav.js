@@ -1,8 +1,15 @@
+// libraries
 import React, { useContext, useEffect }from 'react';
-import NavList from './NavList';
-import SideNavBarContext from '../../../context/SideNavBarContext';
-import defaultProfilePicture from '../../../images/default_image.png';
 import {Auth} from 'aws-amplify';
+
+// contexts
+import SideNavBarContext from '../../../context/SideNavBarContext';
+
+// components
+import NavList from './NavList';
+
+// images
+import defaultProfilePicture from '../../../images/default_image.png';
 
 const SideNav = () => {
 
@@ -31,7 +38,8 @@ const SideNav = () => {
             src={defaultProfilePicture} alt="profileImage" 
             className="profilePicture"  
           />
-          <span style={{textAlign: "center"}}>Edit</span>
+          <span>Edit</span>
+          <span>@sangwoo89118</span>
         </div>
       </div>
       <div className="listContainer">

@@ -1,5 +1,7 @@
+// libraries
 import React, { useState, useContext, useEffect } from 'react';
 
+// context
 import ProjectContext from '../../../../context/ProjectContext';
 
 const IndividualTodoContainer = ({ match }) => {

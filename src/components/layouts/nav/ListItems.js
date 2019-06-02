@@ -1,5 +1,7 @@
+// libraries
 import React, { useState, useContext, useEffect } from 'react';
 
+// contexts
 import SideNavBarContext from '../../../context/SideNavBarContext';
 import RouterContext from '../../../context/RouterContext';
 import CurrentTitleContext from '../../../context/CurrentTitleContext';
